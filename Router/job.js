@@ -4,6 +4,6 @@ const router = express.Router();
 
 router.get("/jobs",getAllJobs)
 router.post("/jobs",createJob)
-router.delete("/jobs",deleteSingleJobs)
+router.delete("/jobs/:id",deleteSingleJobs)
 
 module.exports=router

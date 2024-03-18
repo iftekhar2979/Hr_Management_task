@@ -13,6 +13,10 @@ const candidateSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
+    picture:{
+        type:String,
+        required:true
+    },
     title: {
         type: String,
         required: true,
@@ -23,7 +27,7 @@ const candidateSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        required: true
+
     },
     experience: {
         type: Number

@@ -13,15 +13,16 @@ const createJob = async (req, res) => {
 
 const getAllJobs = async (req, res) => {
     try {
-        const allJobs = await jobModel.findMany({});
+        const allJobs = await jobModel.find({});
         res.status(201).send(allJobs)
     } catch (error) {
         res.status(404).send(error)
     }
 }
 const deleteSingleJobs = async (req, res) => {
+    console.log(req.params.id)
     try {
-        const allJobs = await jobModel.findByIdAndDelete(req.param.id);
+        const allJobs = await jobModel.findByIdAndDelete(req.params.id);
         res.status(201).send({ allJobs, isDeleted: true })
     } catch (error) {
         res.status(404).send(error)

@@ -12,10 +12,6 @@ const jobSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
-    skills: {
-        type: Array,
-        required: true,
-    },
     createdAt: {
         type: Date,
         default: Date.now
