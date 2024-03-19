@@ -1,5 +1,9 @@
 const mongoose = require('mongoose')
 const jobSchema = new mongoose.Schema({
+    jobNo:{
+        type:Number,
+        required:true
+    },
     title: {
         type: String,
         required: true,
@@ -17,5 +21,6 @@ const jobSchema = new mongoose.Schema({
         default: Date.now
     }
 })
+
 const jobModel = new mongoose.model('Jobs', jobSchema)
 module.exports = jobModel

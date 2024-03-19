@@ -12,17 +12,16 @@ const createCandidate = async (req, res) => {
 }
 const getAllCandidate = async (req, res) => {
     try {
-        const allJobs = await candidateModel.find({});
+        const allJobs = await candidateModel.find({}).sort({createdAt:-1});
         res.status(201).send(allJobs)
     } catch (error) {
         res.status(404).send(error)
     }
 }
+
 const editSingleCandidate = async (req, res) => {
     const updatedBody = req.body
     const requestedId = req.params.id
-    console.log(requestedId)
-    console.log(updatedBody)
     try {
         const allJobs = await candidateModel.findByIdAndUpdate(requestedId, updatedBody);
         res.status(201).send({allJobs,isUpdated:true})
